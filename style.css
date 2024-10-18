@@ -5,13 +5,9 @@
 :root {
   --s-primary-color: #fff;
   --s-secondary-color: #848484;
-  --btn-bg-color: #136a91;
-  --shadow-medium: 0 4px 6px -1px rgb(194 194 194 / 13%),
-    0 2px 4px -1px rgb(106 105 105 / 24%);
+  --s-third-color: #ff037e;
 }
-*,
-*::before,
-*::after {
+* {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -46,7 +42,6 @@ body {
   color: #fff;
   background-color: #000;
   transition: all 200ms linear;
-  height: 200vh;
 }
 
 a,
@@ -66,6 +61,10 @@ video {
   object-fit: cover;
 }
 
+section {
+  padding: 100px 0;
+}
+
 .root-primary-color {
   color: var(--s-primary-color);
 }
@@ -80,6 +79,71 @@ video {
   }
 }
 
+/*! Space Stars*/
+#space,
+.stars {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1000;
+}
+
+.stars {
+  background-image: radial-gradient(3px 3px at 20px 30px, #eee, #06050b),
+    radial-gradient(3px 3px at 40px 70px, #fff, #06050b),
+    radial-gradient(3px 3px at 50px 160px, #c2bcbc, #06050b),
+    radial-gradient(3px 3px at 90px 40px, #fff, #06050b),
+    radial-gradient(3px 3px at 130px 80px, #fff, #06050b),
+    radial-gradient(3px 3px at 160px 120px, #ddd, #06050b);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 5s infinite;
+  opacity: 0;
+}
+
+.stars:nth-child(1) {
+  background-position: 50% 50%;
+  animation-delay: 0s;
+}
+.stars:nth-child(2) {
+  background-position: 20% 60%;
+  animation-delay: 1s;
+}
+.stars:nth-child(3) {
+  background-position: -20% -30%;
+  animation-delay: 2s;
+}
+.stars:nth-child(4) {
+  background-position: 40% -80%;
+  animation-delay: 3s;
+}
+.stars:nth-child(5) {
+  background-position: -20% 30%;
+  animation-delay: 4s;
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  }
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+
+/*! Nav Style*/
+
 #top-nav {
   flex: 0 0 auto;
   height: auto;
@@ -88,7 +152,7 @@ video {
   top: 24px;
   transform: translateX(-50%);
   min-width: auto;
-  z-index: 2;
+  z-index: 9999;
 }
 
 .nav-items-wrapper {
@@ -125,7 +189,7 @@ video {
 }
 
 .nav-items-wrapper .links a {
-  color: var(--s-secondary-color);
+  color: var(--s-primary-color);
   text-decoration: none;
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -136,7 +200,7 @@ video {
 }
 
 .nav-items-wrapper .links a:hover {
-  color: var(--s-primary-color);
+  color: var(--s-third-color);
   font-weight: 500;
 }
 
@@ -147,8 +211,10 @@ video {
   gap: 15px;
 }
 
+/*! First Content*/
+
 #firstContent {
-  height: 100vh;
+  min-height: 100vh;
   padding: 80px 0 0 0;
 }
 
@@ -199,76 +265,8 @@ video {
   z-index: -1;
 }
 
-/*! Space Stars*/
-#space,
-.stars {
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1000;
-}
-
-.stars {
-  background-image: radial-gradient(
-      2px 2px at 20px 30px,
-      #eee,
-      rgba(0, 0, 0, 0)
-    ),
-    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
-    radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
-    radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
-    radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
-    radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
-  background-repeat: repeat;
-  background-size: 200px 200px;
-  animation: zoom 5s infinite;
-  opacity: 0;
-}
-
-.stars:nth-child(1) {
-  background-position: 50% 50%;
-  animation-delay: 0s;
-}
-.stars:nth-child(2) {
-  background-position: 20% 60%;
-  animation-delay: 1s;
-}
-.stars:nth-child(3) {
-  background-position: -20% -30%;
-  animation-delay: 2s;
-}
-.stars:nth-child(4) {
-  background-position: 40% -80%;
-  animation-delay: 3s;
-}
-.stars:nth-child(5) {
-  background-position: -20% 30%;
-  animation-delay: 4s;
-}
-
-@keyframes zoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-    animation-timing-function: ease-in;
-  }
-  85% {
-    opacity: 1;
-    transform: scale(2.8);
-    animation-timing-function: linear;
-  }
-  100% {
-    opacity: 0;
-    transform: scale(3.5);
-  }
-}
-
-/*! Infinite text-slide*/
-.marquee-sales {
-  margin: 100px 0;
+/*! Marquee-Sales */
+#marquee-sales {
   overflow: hidden;
 }
 
@@ -287,7 +285,7 @@ video {
   height: auto;
 }
 
-.marquee-sales p {
+#marquee-sales p {
   position: relative;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent;
@@ -313,4 +311,64 @@ video {
   100% {
     transform: translate(-100%, 0);
   }
+}
+
+/*! Second Content*/
+
+#secondSection .ts-badge {
+  background: linear-gradient(45deg, #e5663a, #191818);
+  padding: 8px 12px;
+  border-radius: 15px;
+  display: inline;
+  margin: 15px 0;
+  color: var(--s-secondary-color);
+}
+
+#secondSection .ts-h2 {
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 20px 0;
+}
+
+#secondSection p {
+  color: var(--s-secondary-color);
+}
+
+/*! Third Section */
+
+#thirdSection .container {
+  background: url(img/astronaut-moon.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#thirdSection .ts-paragraphs-wrapper {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.7736344537815126) 2%,
+    rgba(0, 0, 0, 0) 58%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+#thirdSection p {
+  color: var(--s-primary-color);
+  background-color: #ffffff26;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  transition: ease-in-out 0.3s all;
+  cursor: pointer;
+  height: 250px;
+  overflow: hidden;
+}
+
+#thirdSection p img {
+  width: 48px;
+  height: 48px;
 }
