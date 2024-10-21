@@ -374,33 +374,50 @@ section {
 
 /*! fourtSection */
 
-#fourthSection {
+#fourthSection div:first-child {
+  background: url(img/space.jpg) no-repeat;
+  height: 100vh;
+  background-position: top;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: end;
+}
+
+#fourthSection div:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     0deg,
     rgba(40, 37, 37, 0) 0%,
     rgb(0 0 0 / 28%) 44%,
     rgb(0 0 0 / 67%) 100%
   );
-  position: relative;
-  z-index: -1;
-}
-
-#fourthSection div:first-child {
-  background: url(img/space.jpg) no-repeat;
-  height: 100vh;
-  background-position: top;
-  background-size: cover;
-  z-index: -99;
-  position: relative;
-  display: flex;
-  align-items: end;
 }
 #fourthSection ul {
   z-index: 99;
+}
+
+#fourthSection footer {
+  z-index: 1;
+}
+
+#fourthSection img {
+  cursor: pointer;
 }
 
 #fourthSection a {
   color: var(--s-primary-color);
   text-transform: uppercase;
   cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+#fourthSection a:hover {
+  color: var(--s-third-color);
+  font-weight: 500;
 }
