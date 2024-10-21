@@ -382,7 +382,7 @@ section {
 /*! Third Section */
 
 #thirdSection .container {
-  background: url(../img/astronaut-moon.png) no-repeat;
+  background: url(img/astronaut-moon.png) no-repeat;
   background-size: contain;
   background-position: center;
 }
