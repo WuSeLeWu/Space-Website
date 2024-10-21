@@ -157,12 +157,10 @@ section {
 
 .nav-items-wrapper {
   place-content: center;
-  align-items: center;
   display: flex;
   flex-flow: row;
   gap: 10px;
   height: 56px;
-  overflow: visible;
   padding: 10px;
   position: relative;
   min-width: auto;
@@ -172,12 +170,9 @@ section {
   width: 100%;
   opacity: 1;
 }
-
-.nav-items-wrapper .logo-wrapper img {
+.nav-items-wrapper .logo-wrapper {
   width: 40px;
-  height: auto;
-  margin: 20px 0;
-  user-select: none;
+  height: 35px;
 }
 
 .nav-items-wrapper .links {
@@ -186,6 +181,7 @@ section {
   align-items: center;
   gap: 10px;
   list-style: none;
+  padding-left: 0px;
 }
 
 .nav-items-wrapper .links a {
@@ -195,7 +191,7 @@ section {
   margin-bottom: 5px;
   padding: 15px;
   border-bottom: 0;
-  font-size: 16px;
+  font-size: 14px;
   transition: all ease-in-out 0.5s;
 }
 
@@ -204,11 +200,61 @@ section {
   font-weight: 500;
 }
 
-.nav-items-wrapper .buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
+.nav-items-wrapper .mobile-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+  font-size: 20px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/*? Nav Responsive*/
+@media (max-width: 576px) {
+  #top-nav {
+    width: 100%;
+    display: flex;
+  }
+
+  .nav-items-wrapper {
+    flex-flow: column;
+    height: auto;
+    margin: 0 25px;
+  }
+
+  .nav-items-wrapper .logo-wrapper img {
+    object-fit: fill;
+  }
+
+  .nav-items-wrapper .links {
+    width: 100%;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-left: 15px;
+    opacity: 0;
+    max-height: 0;
+    transition: all cubic-bezier(0, 0.15, 0.75, 0.96) 0.5s;
+  }
+
+  .nav-items-wrapper.active .links {
+    opacity: 1;
+    max-height: 250px;
+  }
+
+  .nav-items-wrapper .links a {
+    padding: 0;
+  }
+
+  .nav-items-wrapper .mobile-toggle {
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: transform cubic-bezier(0, 0.15, 0.75, 0.96) 0.5s;
+  }
+
+  .nav-items-wrapper.active .mobile-toggle {
+    transform: rotate(90deg);
+  }
 }
 
 /*! First Content*/
@@ -324,8 +370,6 @@ section {
 }
 
 #secondSection .ts-h2 {
-  font-size: 52px;
-  line-height: 62px;
   font-weight: 700;
   text-transform: capitalize;
   margin: 20px 0;
@@ -338,7 +382,7 @@ section {
 /*! Third Section */
 
 #thirdSection .container {
-  background: url(img/astronaut-moon.png) no-repeat;
+  background: url(../img/astronaut-moon.png) no-repeat;
   background-size: contain;
   background-position: center;
 }
@@ -404,6 +448,7 @@ section {
 
 #fourthSection footer {
   z-index: 1;
+  row-gap: 25px;
 }
 
 #fourthSection img {
@@ -420,4 +465,41 @@ section {
 #fourthSection a:hover {
   color: var(--s-third-color);
   font-weight: 500;
+}
+
+/*? Responsive Start */
+@media (max-width: 1400px) {
+}
+
+@media (max-width: 1200px) {
+  #firstContent h1 {
+    font-size: 52px;
+    line-height: 62px;
+  }
+  #firstContent .fc-img-wrapper img {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 992px) {
+  #firstContent h1 {
+    font-size: 42px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-items-wrapper .links a {
+    font-size: 14px;
+  }
+
+  #firstContent {
+    padding: 150px 0 0 0;
+  }
+  #firstContent .fc-img-wrapper img {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 576px) {
 }

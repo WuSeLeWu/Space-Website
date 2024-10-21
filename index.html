@@ -10,6 +10,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -26,15 +32,14 @@
           <img src="img/logoS.png" alt="Logo" class="logo" />
         </a>
         <ul class="links mb-0">
-          <li class="links-item">
-            <a href="announcement.html">Home</a>
-          </li>
-          <li class="links-item">
-            <a href="announcementDetail.html">Blog</a>
-          </li>
+          <li class="links-item"><a href="#">Home</a></li>
+          <li class="links-item"><a href="#">Blog</a></li>
           <li class="links-item"><a href="#">SpaceX</a></li>
           <li class="links-item"><a href="#">Randomize</a></li>
         </ul>
+        <div id="mobile-toggle" class="mobile-toggle">
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
       </div>
     </nav>
     <section id="firstContent">
@@ -60,14 +65,14 @@
     <section id="secondSection">
       <div class="container d-flex flex-column gap-5">
         <div class="d-flex flex-wrap align-items-center">
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 order-2 order-md-1">
             <div class="ts-img-wrapper">
               <img src="img/saturn.png" alt="mars" />
             </div>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col-12 col-md-6 order-1 order-md-2">
             <div class="ts-badge">Content Section</div>
-            <h2 class="ts-h2">Lorem ipsum dolor sit amet consectetur.</h2>
+            <h2 class="ts-h2 fs-1">Lorem ipsum dolor sit amet consectetur.</h2>
             <p>
               " Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
               similique vitae dicta sit quisquam. Alias adipisci distinctio,
@@ -79,7 +84,7 @@
         <div class="d-flex flex-wrap align-items-center">
           <div class="col-12 col-md-6">
             <div class="ts-badge">Content Section</div>
-            <h2 class="ts-h2">Lorem ipsum dolor sit amet consectetur.</h2>
+            <h2 class="ts-h2 fs-1">Lorem ipsum dolor sit amet consectetur.</h2>
             <p>
               " Lorem, ipsum dolor sit amet consectetur adipisicing elit. At
               similique vitae dicta sit quisquam. Alias adipisci distinctio,
@@ -205,19 +210,19 @@
     <section id="fourthSection" class="py-0">
       <div>
         <footer class="d-flex flex-wrap py-3 container">
-          <p class="col-md-4 mb-0">
+          <p class="col-12 col-md-4 mb-0 d-flex justify-content-center">
             © 2024 WuSeLeWu, Inc. All rights reserved.
           </p>
 
           <div
-            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto"
+            class="col-12 col-md-4 d-flex align-items-center justify-content-center"
           >
             <a href="/">
               <img src="img/logoS.png" alt="" style="width: 50px" />
             </a>
           </div>
 
-          <ul class="nav col-md-4 justify-content-end">
+          <ul class="col-12 nav col-md-4 d-flex justify-content-center">
             <li class="nav-item">
               <a href="#" class="nav-link px-2">Home</a>
             </li>
